@@ -33,6 +33,10 @@ void loop() {
   // reads the input on analog pin A0 (value between 0 and 1023)
 
   connectToMQTT();
+
+// The file runs smoothly when all of the below is commented out, but as soon as I uncomment it, it throws up the error 
+//'connectToWifi is not declared in the scope' and am not sure where I am going wrong
+  
 //
 //  if (millis() > pTime = timer) {
 //    pTime = millis();
