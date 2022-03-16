@@ -6,7 +6,7 @@ void connectToMQTT() {
     return;
   }
 
-  Serial.println("Connecting to MQTT..."); // Print a message to the Serial monitor so you can see what's going on. 
+  Serial.println("Connecting to MQTT..."); // Print a message to the Serial monitor so you can see what's going on.
 
   uint8_t retries = 3; // Create an unsigned int to hold the maximum number of attempts Arduino will make to connect to MQTT.
   // If the Arduino cannot connect after 3 tries – it will give up and do nothing until it is manually reset.
@@ -16,17 +16,17 @@ void connectToMQTT() {
     Serial.println(mqtt.connectErrorString(ret)); // Print an error message to the Serial
     Serial.println("Retrying MQTT connection in 5 seconds..."); // Print a retry message to the Serial – so you can keep an eye on what's going on
     mqtt.disconnect(); // Disconnect from MQTT
-    delay(5000); // Wait for 5 seconds 
-    retries --; // Reduce the value of retries by 1 (-- means subtract one) 
+    delay(5000); // Wait for 5 seconds
+    retries --; // Reduce the value of retries by 1 (-- means subtract one)
     if (retries == 0) { // If you have run out of retries...
-      while (1); // ...do nothing until the Arduino is manually reset. 
+      while (1); // ...do nothing until the Arduino is manually reset.
     }
   }
 
-  // In the above code while(1) basicallly creates an infinite loop – it is always true so the Arduino cannot execute any other code. 
-  // The only way to break it is to manually reset the Arduino.  
+  // In the above code while(1) basicallly creates an infinite loop – it is always true so the Arduino cannot execute any other code.
+  // The only way to break it is to manually reset the Arduino.
   // For more info, see this forum post: https://forum.arduino.cc/index.php?topic=361516.0
 
-  Serial.println("MQTT Connected!"); // If we have connected to Adafruit IO sucessfully, print a success message to the Serial port. 
+  Serial.println("MQTT Connected!"); // If we have connected to Adafruit IO sucessfully, print a success message to the Serial port.
 
 }
